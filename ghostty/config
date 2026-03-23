@@ -1,0 +1,5 @@
+maximize = true
+background-opacity = 0.7
+cursor-text = #000000
+cursor-opacity = 0.7
+command=tmux

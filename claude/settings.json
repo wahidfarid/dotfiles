@@ -1,0 +1,27 @@
+{
+  "model": "opusplan",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/whisper/.code-notify/lib/code-notify/core/notifier.sh notification claude"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/whisper/.code-notify/lib/code-notify/core/notifier.sh stop claude"
+          }
+        ]
+      }
+    ]
+  }
+}
