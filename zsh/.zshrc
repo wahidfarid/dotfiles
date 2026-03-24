@@ -120,3 +120,7 @@ export PATH="$PATH:/home/whisper/.local/bin"
 
 # Turso
 export PATH="$PATH:/home/whisper/.turso"
+
+# peon-ping quick controls
+alias peon="bash /home/whisper/.claude/hooks/peon-ping/peon.sh"
+[ -f /home/whisper/.claude/hooks/peon-ping/completions.bash ] && source /home/whisper/.claude/hooks/peon-ping/completions.bash
