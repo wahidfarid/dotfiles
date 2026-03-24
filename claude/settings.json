@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10
           }
         ]
@@ -35,7 +35,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -56,7 +56,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -78,7 +78,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -99,7 +99,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -123,7 +123,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -136,7 +136,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -149,7 +149,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
@@ -162,7 +162,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "command": "$HOME/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
           }
