@@ -54,8 +54,9 @@ link "$DOTFILES_DIR/zsh/.p10k.zsh"         "$HOME/.p10k.zsh"
 link "$DOTFILES_DIR/tmux/.tmux.conf"       "$HOME/.tmux.conf"
 link "$DOTFILES_DIR/ghostty/config"        "$HOME/.config/ghostty/config"
 link "$DOTFILES_DIR/git/.gitconfig"        "$HOME/.gitconfig"
-link "$DOTFILES_DIR/claude/CLAUDE.md"      "$HOME/.claude/CLAUDE.md"
-link "$DOTFILES_DIR/claude/settings.json"  "$HOME/.claude/settings.json"
+link "$DOTFILES_DIR/claude/CLAUDE.md"                        "$HOME/.claude/CLAUDE.md"
+link "$DOTFILES_DIR/claude/settings.json"                    "$HOME/.claude/settings.json"
+link "$DOTFILES_DIR/claude/hooks/peon-ping/config.json"      "$HOME/.claude/hooks/peon-ping/config.json"
 
 # ── Systemd watcher service ───────────────────────────────────────────────────
 echo "==> Installing dotfiles watcher service..."
