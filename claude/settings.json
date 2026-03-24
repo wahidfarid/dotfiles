@@ -1,27 +1,177 @@
 {
   "model": "opusplan",
   "hooks": {
-    "Notification": [
+    "SessionStart": [
       {
-        "matcher": "idle_prompt",
         "hooks": [
           {
             "type": "command",
-            "command": "/home/whisper/.code-notify/lib/code-notify/core/notifier.sh notification claude"
+            "command": "$HOME/.claude/hooks/monitor.sh SessionStart"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/monitor.sh UserPromptSubmit"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
           }
         ]
       }
     ],
     "Stop": [
       {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/monitor.sh Stop"
+          }
+        ]
+      },
+      {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "/home/whisper/.code-notify/lib/code-notify/core/notifier.sh stop claude"
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/monitor.sh Notification"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/monitor.sh SessionEnd"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(cat - | python3 -c \"import sys,json; d=json.load(sys.stdin).get('tool_input',{}); print(d.get('file_path',''))\" 2>/dev/null) && [ -n \"$FILE\" ] && npx prettier --write \"$FILE\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/wahid.farid/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
           }
         ]
       }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
+  "voiceEnabled": true
 }
