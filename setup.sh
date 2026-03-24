@@ -54,7 +54,6 @@ link "$DOTFILES_DIR/zsh/.p10k.zsh"         "$HOME/.p10k.zsh"
 link "$DOTFILES_DIR/tmux/.tmux.conf"       "$HOME/.tmux.conf"
 link "$DOTFILES_DIR/ghostty/config"        "$HOME/.config/ghostty/config"
 link "$DOTFILES_DIR/git/.gitconfig"        "$HOME/.gitconfig"
-link "$DOTFILES_DIR/ssh/config"            "$HOME/.ssh/config"
 link "$DOTFILES_DIR/claude/CLAUDE.md"      "$HOME/.claude/CLAUDE.md"
 link "$DOTFILES_DIR/claude/settings.json"  "$HOME/.claude/settings.json"
 
@@ -86,8 +85,6 @@ systemctl --user daemon-reload
 systemctl --user enable --now dotfiles-watcher.service
 echo "    Watcher service enabled and started."
 
-# ── SSH permissions ───────────────────────────────────────────────────────────
-chmod 600 "$HOME/.ssh/config" 2>/dev/null || true
 
 echo ""
 echo "==> Setup complete!"
