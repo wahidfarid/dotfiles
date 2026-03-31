@@ -173,5 +173,6 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
   },
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "autoDreamEnabled": true
 }

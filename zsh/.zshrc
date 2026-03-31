@@ -122,5 +122,9 @@ export PATH="$PATH:/home/whisper/.local/bin"
 export PATH="$PATH:/home/whisper/.turso"
 
 # peon-ping quick controls
-alias peon="bash /home/whisper/.claude/hooks/peon-ping/peon.sh"
-[ -f /home/whisper/.claude/hooks/peon-ping/completions.bash ] && source /home/whisper/.claude/hooks/peon-ping/completions.bash
+alias peon="bash $HOME/.claude/hooks/peon-ping/peon.sh"
+[ -f "$HOME/.claude/hooks/peon-ping/completions.bash" ] && source "$HOME/.claude/hooks/peon-ping/completions.bash"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(~/.local/bin/mise activate zsh)"
