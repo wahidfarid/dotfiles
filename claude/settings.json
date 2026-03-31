@@ -1,5 +1,5 @@
 {
-  "model": "opusplan",
+  "model": "haiku",
   "hooks": {
     "SessionStart": [
       {
@@ -174,5 +174,9 @@
     "swift-lsp@claude-plugins-official": true
   },
   "voiceEnabled": true,
-  "autoDreamEnabled": true
+  "autoDreamEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/statusline-command.sh"
+  }
 }

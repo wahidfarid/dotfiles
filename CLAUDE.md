@@ -9,6 +9,7 @@ dotfiles/
 ├── claude/
 │   ├── CLAUDE.md                        -> ~/.claude/CLAUDE.md
 │   ├── settings.json                    -> ~/.claude/settings.json
+│   ├── statusline-command.sh            -> ~/.claude/statusline-command.sh
 │   └── hooks/peon-ping/config.json      -> ~/.claude/hooks/peon-ping/config.json
 ├── ghostty/
 │   └── config                           -> ~/.config/ghostty/config

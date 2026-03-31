@@ -57,6 +57,7 @@ link "$DOTFILES_DIR/git/.gitconfig"        "$HOME/.gitconfig"
 link "$DOTFILES_DIR/claude/CLAUDE.md"                        "$HOME/.claude/CLAUDE.md"
 link "$DOTFILES_DIR/claude/settings.json"                    "$HOME/.claude/settings.json"
 link "$DOTFILES_DIR/claude/hooks/peon-ping/config.json"      "$HOME/.claude/hooks/peon-ping/config.json"
+link "$DOTFILES_DIR/claude/statusline-command.sh"            "$HOME/.claude/statusline-command.sh"
 
 # ── Systemd watcher service ───────────────────────────────────────────────────
 echo "==> Installing dotfiles watcher service..."
