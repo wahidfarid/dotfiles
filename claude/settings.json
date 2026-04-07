@@ -1,5 +1,4 @@
 {
-  "model": "opusplan",
   "hooks": {
     "SessionStart": [
       {
@@ -144,13 +143,13 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
   },
   "voiceEnabled": true,
-  "autoDreamEnabled": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bash $HOME/.claude/statusline-command.sh"
-  }
+  "autoDreamEnabled": true
 }
