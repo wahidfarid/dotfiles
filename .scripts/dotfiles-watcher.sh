@@ -25,6 +25,15 @@ while read -r CHANGED_FILE; do
     continue
   fi
 
+  # Skip commit if the only change is the model field in claude/settings.json
+  if [ "$CHANGED" = "claude/settings.json" ]; then
+    COMMITTED=$(git -C "$DOTFILES_DIR" show HEAD:claude/settings.json | jq 'del(.model)' 2>/dev/null)
+    WORKING=$(jq 'del(.model)' "$DOTFILES_DIR/claude/settings.json" 2>/dev/null)
+    if [ -n "$COMMITTED" ] && [ "$COMMITTED" = "$WORKING" ]; then
+      continue
+    fi
+  fi
+
   # Build commit message from changed files
   FILE_LIST=$(echo "$CHANGED" | tr '\n' ' ' | sed 's/ $//')
   COMMIT_MSG="auto: update $FILE_LIST"

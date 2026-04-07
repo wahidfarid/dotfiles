@@ -1,15 +1,7 @@
 {
-  "model": "haiku",
+  "model": "opusplan",
   "hooks": {
     "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/monitor.sh SessionStart"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -23,14 +15,6 @@
     ],
     "UserPromptSubmit": [
       {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/monitor.sh UserPromptSubmit"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -40,17 +24,24 @@
             "async": true
           }
         ]
-      }
-    ],
-    "Stop": [
+      },
       {
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/hooks/monitor.sh Stop"
+            "command": "$HOME/.claude/hooks/peon-ping/scripts/hook-handle-use.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/peon-ping/scripts/hook-handle-rename.sh",
+            "timeout": 5
           }
         ]
-      },
+      }
+    ],
+    "Stop": [
       {
         "matcher": "",
         "hooks": [
@@ -65,15 +56,6 @@
     ],
     "Notification": [
       {
-        "matcher": "permission_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/monitor.sh Notification"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -86,14 +68,6 @@
       }
     ],
     "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/monitor.sh SessionEnd"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
