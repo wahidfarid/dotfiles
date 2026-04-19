@@ -27,8 +27,8 @@ while read -r CHANGED_FILE; do
 
   # Skip commit if the only change is the model field in claude/settings.json
   if [ "$CHANGED" = "claude/settings.json" ]; then
-    COMMITTED=$(git -C "$DOTFILES_DIR" show HEAD:claude/settings.json | jq -S 'del(.model)' 2>/dev/null)
-    WORKING=$(jq -S 'del(.model)' "$DOTFILES_DIR/claude/settings.json" 2>/dev/null)
+    COMMITTED=$(git -C "$DOTFILES_DIR" show HEAD:claude/settings.json | jq -S 'del(.model, .effortLevel)' 2>/dev/null)
+    WORKING=$(jq -S 'del(.model, .effortLevel)' "$DOTFILES_DIR/claude/settings.json" 2>/dev/null)
     if [ -n "$COMMITTED" ] && [ "$COMMITTED" = "$WORKING" ]; then
       continue
     fi
