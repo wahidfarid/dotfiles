@@ -1,5 +1,5 @@
 {
-  "model": "opus",
+  "model": "opusplan",
   "hooks": {
     "SessionStart": [
       {
@@ -151,7 +151,7 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
   },
+  "effortLevel": "high",
   "autoDreamEnabled": true,
-  "voiceEnabled": true,
-  "effortLevel": "high"
+  "voiceEnabled": true
 }

@@ -18,25 +18,10 @@ Generate a commit message based on the currently staged changes in this repo and
    - No ticket or issue references (no `TC-123:`, no `Fixes #42`, no `[PROJ-1]`).
    - No markdown fences, no leading/trailing whitespace, no indentation on any line.
 5. If `$ARGUMENTS` is non-empty, treat it as extra instructions from the user (for example "include ticket TC-123", "add a body explaining why", "use a specific prefix"). Honor those, overriding the defaults above only where they conflict.
-6. Write the final message to a tempfile with `mktemp`, so special characters in the message do not collide with shell quoting. Example:
-   ```sh
-   msg=$(mktemp)
-   cat > "$msg" <<'COMMIT_MSG_EOF'
-   <the composed message>
-   COMMIT_MSG_EOF
-   ```
-7. Pipe the tempfile into whichever clipboard tool exists on this machine:
-   ```sh
-   if command -v pbcopy >/dev/null 2>&1; then pbcopy < "$msg"
-   elif command -v wl-copy >/dev/null 2>&1; then wl-copy < "$msg"
-   elif command -v xclip >/dev/null 2>&1; then xclip -selection clipboard < "$msg"
-   elif command -v xsel >/dev/null 2>&1; then xsel --clipboard --input < "$msg"
-   elif command -v clip.exe >/dev/null 2>&1; then clip.exe < "$msg"
-   else echo "no clipboard tool found" >&2; rm -f "$msg"; exit 1
-   fi
-   rm -f "$msg"
-   ```
-8. Print the exact message back to the user so they can see what is now on the clipboard.
+6. Generate a fresh tempfile path with Bash: `mktemp -u /tmp/claude-commit-msg.XXXXXX`. The `-u` flag prints the path without creating the file, so the Write tool can create it cleanly without a prior Read. This form works on both GNU mktemp (Linux) and BSD mktemp (macOS). Capture the printed path for the next two steps.
+7. Use the Write tool to write the composed message to that path. The content must be exactly the commit message with no trailing newline. Do NOT use a Bash heredoc — heredocs containing prose trip the Bash command classifier with `undefined node type: string` and force a manual permission prompt every run.
+8. Run one trivial Bash pipeline to copy the file to the clipboard and remove it. Pick the first clipboard tool present on this machine and emit exactly one command of the form `<tool> < <path> && rm <path>`. Candidates in order: `pbcopy`, `wl-copy`, `xclip -selection clipboard`, `xsel --clipboard --input`, `clip.exe`. If none exist, delete the file and tell the user no clipboard tool was found.
+9. Print the exact message back to the user so they can see what is now on the clipboard.
 
 ## Arguments
 
