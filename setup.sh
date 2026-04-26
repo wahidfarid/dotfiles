@@ -59,6 +59,7 @@ link "$DOTFILES_DIR/claude/settings.json"                    "$HOME/.claude/sett
 link "$DOTFILES_DIR/claude/hooks/peon-ping/config.json"      "$HOME/.claude/hooks/peon-ping/config.json"
 link "$DOTFILES_DIR/claude/statusline-command.sh"            "$HOME/.claude/statusline-command.sh"
 link "$DOTFILES_DIR/claude/commands/commit-msg.md"           "$HOME/.claude/commands/commit-msg.md"
+link "$DOTFILES_DIR/claude/commands/wrap-up.md"             "$HOME/.claude/commands/wrap-up.md"
 
 # ── Systemd watcher service ───────────────────────────────────────────────────
 echo "==> Installing dotfiles watcher service..."
