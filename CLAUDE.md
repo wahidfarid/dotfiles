@@ -10,7 +10,10 @@ dotfiles/
 │   ├── CLAUDE.md                        -> ~/.claude/CLAUDE.md
 │   ├── settings.json                    -> ~/.claude/settings.json
 │   ├── statusline-command.sh            -> ~/.claude/statusline-command.sh
-│   └── hooks/peon-ping/config.json      -> ~/.claude/hooks/peon-ping/config.json
+│   ├── hooks/peon-ping/config.json      -> ~/.claude/hooks/peon-ping/config.json
+│   └── commands/
+│       ├── commit-msg.md                -> ~/.claude/commands/commit-msg.md
+│       └── wrap-up.md                   -> ~/.claude/commands/wrap-up.md
 ├── ghostty/
 │   └── config                           -> ~/.config/ghostty/config
 ├── git/
