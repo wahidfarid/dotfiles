@@ -151,7 +151,19 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
   },
-  "effortLevel": "high",
+  "permissions": {
+    "allow": [
+      "Bash(git diff --cached*)",
+      "Bash(git log --author*)",
+      "Bash(mktemp -u /tmp/claude-commit-msg*)",
+      "Bash(wl-copy < /tmp/claude-commit-msg*)",
+      "Bash(pbcopy < /tmp/claude-commit-msg*)",
+      "Bash(xclip -selection clipboard < /tmp/claude-commit-msg*)",
+      "Bash(xsel --clipboard --input < /tmp/claude-commit-msg*)",
+      "Bash(clip.exe < /tmp/claude-commit-msg*)"
+    ]
+  },
+  "effortLevel": "medium",
   "autoDreamEnabled": true,
   "voiceEnabled": true
 }
