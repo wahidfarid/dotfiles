@@ -7,7 +7,7 @@ Generate a commit message based on the currently staged changes in this repo and
 ## Steps
 
 1. Run `git diff --cached --stat && echo "---" && git diff --cached` to check staged files and read the diff in one call. If the stat output shows no files, tell the user "no staged changes" and stop.
-2. Run `git log --author="$(git config user.email)" -40 --format="%s" | grep -v '^auto:'` to sample the user's recent commit subjects (skipping auto-watcher noise). Use these as the style reference.
+2. Run `AUTHOR=$(git config user.email) && git log --author="$AUTHOR" -40 --format="%s" | grep -v '^auto:'` to sample the user's recent commit subjects (skipping auto-watcher noise). Use these as the style reference.
 3. Compose a commit message that matches the sampled style. Rules:
    - Lowercase first letter, imperative present tense ("add X", "fix Y", "replace Z"), no trailing period.
    - Terse. One line unless the change genuinely warrants a body.
