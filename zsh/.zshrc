@@ -128,3 +128,8 @@ alias peon="bash $HOME/.claude/hooks/peon-ping/peon.sh"
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(~/.local/bin/mise activate zsh)"
+
+
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS="1"
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
