@@ -165,5 +165,6 @@
   },
   "effortLevel": "xhigh",
   "autoDreamEnabled": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
