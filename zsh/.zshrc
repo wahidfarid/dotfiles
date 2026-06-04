@@ -136,3 +136,10 @@ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS="1"
 
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
+
+# bun completions
+[ -s "/home/wahidf/.bun/_bun" ] && source "/home/wahidf/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
