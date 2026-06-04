@@ -135,4 +135,4 @@ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS="1"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # opencode
-export PATH=/home/whisper/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
