@@ -22,7 +22,7 @@
   "suppress_delegate_sessions": false,
   "no_rc": false,
   "pack_rotation": [],
-  "pack_rotation_mode": "random",
+  "pack_rotation_mode": "session_override",
   "path_rules": [],
   "exclude_dirs": [],
   "ide_rules": [],
