@@ -21,7 +21,7 @@
   "suppress_subagent_complete": false,
   "suppress_delegate_sessions": false,
   "no_rc": false,
-  "pack_rotation": [],
+  "pack_rotation": ["wrecking_ball"],
   "pack_rotation_mode": "session_override",
   "path_rules": [],
   "exclude_dirs": [],
