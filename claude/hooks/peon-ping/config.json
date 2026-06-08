@@ -2,10 +2,10 @@
   "default_pack": "peon",
   "volume": 1.0,
   "enabled": true,
-  "desktop_notifications": false,
+  "desktop_notifications": true,
   "categories": {
     "session.start": true,
-    "task.acknowledge": true,
+    "task.acknowledge": false,
     "task.complete": true,
     "task.error": true,
     "input.required": true,
