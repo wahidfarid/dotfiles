@@ -39,5 +39,5 @@
       }
     }
   },
-  "model": "gemma-4-12b-it-claude-4.6-4.8-opus@q8_0"
+  "model": "google/gemma-4-26b-a4b-qat"
 }
